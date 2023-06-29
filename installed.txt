@@ -1,0 +1,7 @@
+String Manipulation
+com.intellij.plugin.adernov.powershell
+com.intellij.swagger
+com.wakatime.intellij.plugin
+mobi.hsz.idea.gitignore
+izhangzhihao.rainbow.brackets
+com.github.aleksandrsl.intellijbrowserslist

@@ -1,0 +1,71 @@
+<templateSet group="__MY_CUSTOM">
+  <template name="__component" value="interface $ComponentName$Props {&#10;  message: string;&#10;}&#10;&#10;export const $ComponentName$ = memo(({ message }: $ComponentName$Props): JSX.Element =&gt; (&#10;  &lt;div&gt;{message} 123&lt;/div&gt;&#10;));&#10;" description="New react component" toReformat="false" toShortenFQNames="true">
+    <variable name="ComponentName" expression="" defaultValue="ComponentName" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="thrn" value="throw new Error('Not implemented.');$END$" description="Throw new not implemented error." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="ECMAScript6" value="true" />
+    </context>
+  </template>
+  <template name="__asynciffe" value="void (async () =&gt; {&#10;  $END$&#10;  // eslint-disable-next-line no-console&#10;})().catch(console.error);" description="Async IIFE" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__testFile" value="afterEach(() =&gt; {&#10;  jest.restoreAllMocks();&#10;});&#10;&#10;test('$TEST_NAME$', async () =&gt; {&#10;   $END$&#10;});&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="TEST_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useState" value="const [$NAME$, set$NAME_CAP$] = useState&lt;$TYPE$&gt;();$END$" description="use state hook" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME_CAP" expression="" defaultValue="capitalize(NAME)" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useEffect" value="useEffect(() =&gt; {&#10;    $END$&#10;}, []);" description="use effect hook" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useCallback" value="const $NAME$ = useCallback(() =&gt; {&#10;    $END$&#10;}, []);" description="use callback hook" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useMemo" value="const $NAME$ = useMemo(() =&gt; $END$, []);" description="use memo hook" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useEffectAsync" value="useEffect(() =&gt; {&#10;    void (async () =&gt; {&#10;        $END$&#10;        // eslint-disable-next-line no-console&#10;    })().catch(console.error);&#10;}, []);&#10;" description="use async effect hook" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__log" value="// eslint-disable-next-line no-console&#10;console.log('HRISTO: $FILE_NAME$ | $END$');" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__test" value="test('$NAME$', async () =&gt; {&#10;    $END$&#10;});" description="Insets test() block" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__iife" value="(() =&gt; {&#10;  $END$&#10;})();" description="IIFE" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>

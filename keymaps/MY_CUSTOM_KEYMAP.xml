@@ -1,0 +1,10 @@
+<keymap version="1" name="MY_CUSTOM_KEYMAP" parent="Visual Studio">
+  <action id="ReformatWithPrettierAction">
+    <keyboard-shortcut first-keystroke="ctrl e" second-keystroke="ctrl d" />
+  </action>
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="ctrl q" />
+  </action>
+  <action id="SwitcherIterateItems" />
+  <action id="SwitcherRecentEditedChangedToggleCheckBox" />
+</keymap>
