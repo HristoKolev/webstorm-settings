@@ -7,7 +7,7 @@
   </template>
   <template name="thrn" value="throw new Error('Not implemented.');$END$" description="Throw new not implemented error." toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="ECMAScript6" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
     </context>
   </template>
   <template name="__asynciffe" value="void (async () =&gt; {&#10;  $END$&#10;  // eslint-disable-next-line no-console&#10;})().catch(console.error);" description="Async IIFE" toReformat="false" toShortenFQNames="true">
@@ -51,7 +51,8 @@
       <option name="JAVA_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="__log" value="// eslint-disable-next-line no-console&#10;console.log('HRISTO: $FILE_NAME$ | $END$');" description="" toReformat="false" toShortenFQNames="true">
+  <template name="__log" value="// eslint-disable-next-line no-console&#10;console.log('$USERNAME$: $FILE_NAME$ | $END$');" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="USERNAME" expression="groovyScript(&quot;_1.toUpperCase()&quot;, user()) " defaultValue="" alwaysStopAt="false" />
     <variable name="FILE_NAME" expression="fileName()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
@@ -66,6 +67,31 @@
   <template name="__iife" value="(() =&gt; {&#10;  $END$&#10;})();" description="IIFE" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__varRef" value="const $VAR$Ref = useRef($VAR$);&#10;$VAR$Ref.current = $VAR$;$END$" description="React.useRef wrapper around a variable" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__wrapCallback" value="useCallback($CONTENTS$, [])" description="wrap a function in useCallback" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTENTS" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__useRef" value="const $NAME$Ref = useRef&lt;$TYPE$&gt;($VALUE$);" description="use ref hook" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="__script_path" value="TMP_SOURCE=&quot;${BASH_SOURCE[0]}&quot;&#10;while [ -h &quot;$TMP_SOURCE&quot; ]; do&#10;  SCRIPT_PATH=&quot;$( cd -P &quot;$( dirname &quot;$TMP_SOURCE&quot; )&quot; &gt;/dev/null 2&gt;&amp;1 &amp;&amp; pwd )&quot;&#10;  TMP_SOURCE=&quot;$(readlink &quot;$TMP_SOURCE&quot;)&quot;&#10;  [[ $TMP_SOURCE != /* ]] &amp;&amp; TMP_SOURCE=&quot;$SCRIPT_PATH/$TMP_SOURCE&quot;&#10;done&#10;SCRIPT_PATH=&quot;$( cd -P &quot;$( dirname &quot;$TMP_SOURCE&quot; )&quot; &gt;/dev/null 2&gt;&amp;1 &amp;&amp; pwd )&quot;&#10;$END$" description="shell code to get the current script path" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="SHELL_SCRIPT" value="true" />
     </context>
   </template>
 </templateSet>
